@@ -24,7 +24,7 @@ public class LoginTests extends TestBase {
 
     @Test
     void successfulLoginWithApiTest() {
-        String authData = "{\"userName\":\"test123456\",\"password\":\"Test123456@\"}";
+        String authData = "{\"userName\":\"testtestov31\",\"password\":\"Testtestov31_%\"}";
 
         Response authResponse = given()
                 .log().uri()
