@@ -17,6 +17,7 @@ public class TestBase {
 
     @AfterEach
     void shutDown() {
-        closeWebDriver();
+
+        //closeWebDriver();
     }
 }
