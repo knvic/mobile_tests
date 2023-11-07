@@ -39,4 +39,11 @@ public class ProfilePage {
             fieldBook.shouldHave(Condition.text(book.getTitle()));
 
     }
+    public void checkBookIsNotPresent(BookModel book) {
+
+
+        open("/profile");
+        fieldBook.shouldNotHave(Condition.text(book.getTitle()));
+
+    }
 }

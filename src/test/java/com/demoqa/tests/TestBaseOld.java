@@ -5,9 +5,7 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-
-public class TestBase {
+public class TestBaseOld {
 
     @BeforeAll
     static void setup() {

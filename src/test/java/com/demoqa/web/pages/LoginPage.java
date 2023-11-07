@@ -30,7 +30,7 @@ public class LoginPage {
 
     public static void setAuthCookies(AuthorizationResponseModel authResponse) {
 
-        step("Setting auth cookies", () -> {
+        step("Добавляем cookies авторизации", () -> {
             open("/favicon.ico");
             getWebDriver().manage().addCookie(new Cookie("userID", authResponse.getUserId()));
             getWebDriver().manage().addCookie(new Cookie("token", authResponse.getToken()));

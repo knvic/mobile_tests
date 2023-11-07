@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import static com.demoqa.specs.ApiSpec.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
+
 
 public class CollectionsApi  {
 
@@ -41,40 +41,13 @@ public class CollectionsApi  {
                 .statusCode(201);
     }
 
-    public  void addBookUnauthorized(AuthorizationResponseModel authResponse, BookModel book) {
-        step("Добавление книги без авторизации. Проверка кода и сообщения в ответе", () -> given()
-                .spec(unauthorizedRequestSpec)
-                .body(generateAddBookRequest(authResponse, book))
-                .when()
-                .basePath("/BookStore/v1")
-                .post("/Books")
-                .then()
-                .spec(defaultResponseSpec)
-                .statusCode(401)
-                .body("code", is("1200"))
-                .body("message", is("User not authorized!")));
-    }
-
-    public  void addExistingBook(AuthorizationResponseModel authResponse, BookModel book) {
-        step("Добавление книги, которая уже есть в профайле. Проверка кода и сообщения в ответе", () -> given()
-                .spec(commonRequestSpec)
-                .body(generateAddBookRequest(authResponse, book))
-                .when()
-                .basePath("BookStore/v1")
-                .post("/Books")
-                .then()
-                .spec(defaultResponseSpec)
-                .statusCode(400)
-                .body("code", is("1210"))
-                .body("message", is("ISBN already present in the User's Collection!")));
-    }
 
     public  void deleteBookFromTheCollection(AuthorizationResponseModel authResponse, BookModel book) {
         DeleteBookModel deleteBookData = new DeleteBookModel();
         deleteBookData.setUserId(authResponse.getUserId());
         deleteBookData.setIsbn(book.getIsbn());
 
-        step("Удаление книги из профайла", () -> given()
+        given()
                 .spec(commonRequestSpec)
                 .body(deleteBookData)
                 .when()
@@ -82,7 +55,7 @@ public class CollectionsApi  {
                 .delete("/Book")
                 .then()
                 .spec(defaultResponseSpec)
-                .statusCode(204));
+                .statusCode(204);
     }
 
     public  ArrayList<BookModel> getBooks() {

@@ -15,10 +15,10 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 
 
 import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
-import static com.demoqa.collections.CollectionsApi.*;
+
 import static com.demoqa.tests.TestData.*;
 
-import static com.demoqa.web.pages.ProfilePage.checkBookIsPresent;
+
 import static io.qameta.allure.Allure.step;
 
 @Epic("Book Store Application Tests")
@@ -31,8 +31,8 @@ public class CollectionTests extends BaseWebTest {
     protected ProfilePage web = new ProfilePage();
 
     @WithLogin
-    @Story(value = "Добавление книг")
-    @DisplayName("Тест добавления книги в коллекцию")
+    @Story(value = "Добавление книги")
+    @DisplayName("Тест добавления книги в коллекцию профайла")
     @Description("Авторизованы. Удаляем книги из профайла. Добавляем новую. Проверяем ее видимость в профайле.")
     @Test
     void addBookToTheCollectionTest() {
@@ -60,5 +60,40 @@ public class CollectionTests extends BaseWebTest {
         });
     }
 
+
+    @Test
+    @WithLogin
+    @Story(value = "Удаление книги")
+    @DisplayName("Удаление одной книги из коллекции профайла")
+    @Description("Авторизованы, Добавляем и далее удаляем книгу из коллекции профайла. Проверяем отсутствие после удаления")
+    void deleteSingleBookFromTheCollectionTest() {
+
+        AuthorizationResponseModel authResponse =
+                step("Получаем учетные данные провиля для дальнейшей работы", () ->
+                        getAuthResponse(getCredentials())
+                );
+        BookModel book =
+                step("Выбоор случайной книги из списка используя комбинацию классов ThreadLocal и Random для достижения " +
+                        "лучшей производительности в многопоточной среде.", () ->
+                        api
+                                .getRandomBook()
+                );
+        step("Удаляем все книги из профайла", () ->
+                api
+                        .deleteAllBooks(authResponse)
+        );
+        step("Добавляем книгу в профайл", () ->
+                api
+                        .addBookToTheCollection(authResponse, book)
+        );
+
+        step("Удаление книги из профайла", () ->
+        api
+                .deleteBookFromTheCollection(authResponse, book)
+        );
+        step("Проверяем, что удаленной книги нет в коллекции профайла.", () -> {
+        web.checkBookIsNotPresent(book);
+        });
+    }
 
 }

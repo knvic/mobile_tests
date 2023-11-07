@@ -48,7 +48,7 @@ public class LoginTests extends BaseWebTest {
 
     @Test
     void successfulLoginWithApiTest() {
-        //String authData = "{\"userName\":\"knvik021\",\"password\":\"*Test021knvik\"}";
+
         LoginBodyModel authData=new LoginBodyModel("knvik021","*Test021knvik");
         Response authResponse = given()
                 .log().uri()
