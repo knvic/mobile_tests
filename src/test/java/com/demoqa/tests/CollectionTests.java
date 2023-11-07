@@ -7,18 +7,11 @@ import com.demoqa.helpers.WithLogin;
 import com.demoqa.web.BaseWebTest;
 import com.demoqa.web.pages.ProfilePage;
 import io.qameta.allure.*;
-
-import io.qameta.allure.internal.shadowed.jackson.databind.cfg.ContextAttributes;
 import org.junit.jupiter.api.DisplayName;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtensionContext;
-
-
 import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
-
 import static com.demoqa.tests.TestData.*;
-
-
 import static io.qameta.allure.Allure.step;
 
 @Epic("Book Store Application Tests")

@@ -28,9 +28,5 @@ public class LoginSpec {
             .expectStatusCode(200)
             .build();
 
-    public static ResponseSpecification missingPasswordResponseSpec = new ResponseSpecBuilder()
-            .log(STATUS)
-            .log(BODY)
-            .expectStatusCode(400)
-            .build();
+
 }

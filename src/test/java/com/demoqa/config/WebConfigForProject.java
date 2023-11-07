@@ -20,7 +20,7 @@ public class WebConfigForProject {
         Configuration.browser = webConfig.getBrowser().toString();
         Configuration.browserSize = webConfig.getBrowserSize();
         Configuration.pageLoadStrategy = "eager";
-        //Configuration.holdBrowserOpen=true;
+
 
         if (webConfig.isRemote()) {
             Configuration.browser = webConfig.getBrowser().toString();

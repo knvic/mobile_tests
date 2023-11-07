@@ -5,6 +5,7 @@ import com.demoqa.models.LoginBodyModel;
 import com.demoqa.web.pages.LoginPage;
 import com.demoqa.web.pages.ProfilePage;
 import io.restassured.response.Response;
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
