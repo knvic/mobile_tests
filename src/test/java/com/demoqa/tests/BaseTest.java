@@ -1,4 +1,4 @@
-package com.demoqa.web;
+package com.demoqa.tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.config.ConfigReader;
@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.demoqa.config.ConfigReader.webConfig;
 
 
-public class BaseWebTest {
+public class BaseTest {
     protected static final WebConfig config = ConfigReader.Instance.read();
 
     @BeforeAll

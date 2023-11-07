@@ -4,12 +4,12 @@ import com.demoqa.api.authorization.models.AuthorizationResponseModel;
 import com.demoqa.collections.CollectionsApi;
 import com.demoqa.collections.models.BookModel;
 import com.demoqa.helpers.WithLogin;
-import com.demoqa.web.BaseWebTest;
 import com.demoqa.web.pages.ProfilePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
 import static com.demoqa.tests.TestData.*;
@@ -20,8 +20,12 @@ import static io.qameta.allure.Allure.step;
 @Owner("krivorotovnv")
 @Link(value = "Testing", url = "https://demoqa.com/profile")
 @Severity(SeverityLevel.BLOCKER)
-@Tag("api")
-public class CollectionTests extends BaseWebTest {
+
+@Tags({
+        @Tag("api"),
+        @Tag("all")
+})
+public class CollectionTests extends BaseTest {
     protected CollectionsApi api = new CollectionsApi();
     protected ProfilePage web = new ProfilePage();
 

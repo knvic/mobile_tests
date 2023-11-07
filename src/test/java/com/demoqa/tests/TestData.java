@@ -1,9 +1,8 @@
 package com.demoqa.tests;
 
-import com.demoqa.web.BaseWebTest;
 import org.json.JSONObject;
 
-public class TestData extends BaseWebTest {
+public class TestData extends BaseTest {
     public static String login = config.getLogin();
     public static String password =config.getPassword() ;
 

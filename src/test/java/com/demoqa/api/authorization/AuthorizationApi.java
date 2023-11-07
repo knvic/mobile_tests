@@ -1,11 +1,6 @@
 package com.demoqa.api.authorization;
 
-
 import com.demoqa.api.authorization.models.AuthorizationResponseModel;
-import io.restassured.http.ContentType;
-
-
-import static com.demoqa.helpers.CustomAllureListener.withCustomTemplates;
 import static com.demoqa.specs.LoginSpec.loginRequestSpec;
 import static com.demoqa.specs.LoginSpec.loginResponseSpec;
 import static io.restassured.RestAssured.given;
