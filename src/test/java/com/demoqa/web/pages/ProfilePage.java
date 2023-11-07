@@ -32,11 +32,11 @@ public class ProfilePage {
     }
 
 
-    public static void checkBookIsPresent(BookModel book) {
+    public  void checkBookIsPresent(BookModel book) {
 
-        step("Checking book in the collection", () -> {
+
             open("/profile");
             fieldBook.shouldHave(Condition.text(book.getTitle()));
-        });
+
     }
 }
