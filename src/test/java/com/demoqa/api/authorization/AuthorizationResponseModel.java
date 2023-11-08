@@ -1,4 +1,4 @@
-package com.demoqa.api.authorization.models;
+package com.demoqa.api.authorization;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

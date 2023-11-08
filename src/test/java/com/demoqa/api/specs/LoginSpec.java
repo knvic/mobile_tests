@@ -1,4 +1,4 @@
-package com.demoqa.specs;
+package com.demoqa.api.specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;

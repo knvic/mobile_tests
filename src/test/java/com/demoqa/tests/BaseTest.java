@@ -21,7 +21,7 @@ public class BaseTest {
     static void beforeAll() {
         WebConfigForProject webConfigForProject = new WebConfigForProject(config);
         webConfigForProject.webConfig();
-        System.out.println();
+
     }
 
     @BeforeEach

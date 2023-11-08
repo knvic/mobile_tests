@@ -1,12 +1,12 @@
-package com.demoqa.collections;
+package com.demoqa.api;
 
-import com.demoqa.api.authorization.models.AuthorizationResponseModel;
-import com.demoqa.collections.models.*;
+import com.demoqa.api.authorization.AuthorizationResponseModel;
+import com.demoqa.api.models.*;
 
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static com.demoqa.specs.ApiSpec.*;
+import static com.demoqa.api.specs.ApiSpec.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 

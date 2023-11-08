@@ -1,5 +1,6 @@
-package com.demoqa.tests;
+package com.demoqa.helpers;
 
+import com.demoqa.tests.BaseTest;
 import org.json.JSONObject;
 
 public class TestData extends BaseTest {

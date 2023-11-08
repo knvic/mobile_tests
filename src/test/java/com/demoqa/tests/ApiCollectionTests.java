@@ -1,18 +1,18 @@
 package com.demoqa.tests;
 
-import com.demoqa.api.authorization.models.AuthorizationResponseModel;
-import com.demoqa.collections.CollectionsApi;
-import com.demoqa.collections.models.BookModel;
+import com.demoqa.api.authorization.AuthorizationResponseModel;
+import com.demoqa.api.CollectionsApi;
+import com.demoqa.api.models.BookModel;
 import com.demoqa.helpers.WithLogin;
-import com.demoqa.web.pages.ProfilePage;
+import com.demoqa.pages.ProfilePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
-import static com.demoqa.tests.TestData.*;
+import static com.demoqa.api.models.AuthorizationApi.getAuthResponse;
+import static com.demoqa.helpers.TestData.*;
 import static io.qameta.allure.Allure.step;
 
 @Epic("Book Store Application Tests")
@@ -25,7 +25,7 @@ import static io.qameta.allure.Allure.step;
         @Tag("api"),
         @Tag("all")
 })
-public class CollectionTests extends BaseTest {
+public class ApiCollectionTests extends BaseTest {
     protected CollectionsApi api = new CollectionsApi();
     protected ProfilePage web = new ProfilePage();
 

@@ -1,7 +1,7 @@
-package com.demoqa.web.pages;
+package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.api.authorization.models.AuthorizationResponseModel;
+import com.demoqa.api.authorization.AuthorizationResponseModel;
 import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Selenide.$;

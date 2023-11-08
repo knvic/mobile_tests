@@ -1,13 +1,13 @@
 package com.demoqa.helpers;
 
 
-import com.demoqa.api.authorization.models.AuthorizationResponseModel;
+import com.demoqa.api.authorization.AuthorizationResponseModel;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
-import static com.demoqa.tests.TestData.getCredentials;
-import static com.demoqa.web.pages.LoginPage.setAuthCookies;
+import static com.demoqa.api.models.AuthorizationApi.getAuthResponse;
+import static com.demoqa.helpers.TestData.getCredentials;
+import static com.demoqa.pages.LoginPage.setAuthCookies;
 
 
 public class LoginExtension implements BeforeEachCallback {

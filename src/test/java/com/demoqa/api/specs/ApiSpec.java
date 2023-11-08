@@ -1,4 +1,4 @@
-package com.demoqa.specs;
+package com.demoqa.api.specs;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -6,9 +6,9 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static com.demoqa.api.authorization.AuthorizationApi.getAuthResponse;
+import static com.demoqa.api.models.AuthorizationApi.getAuthResponse;
 import static com.demoqa.helpers.CustomAllureListener.withCustomTemplates;
-import static com.demoqa.tests.TestData.getCredentials;
+import static com.demoqa.helpers.TestData.getCredentials;
 
 import static io.restassured.filter.log.LogDetail.*;
 
