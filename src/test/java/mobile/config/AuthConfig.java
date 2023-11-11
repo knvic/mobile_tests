@@ -2,13 +2,10 @@ package mobile.config;
 
 import org.aeonbits.owner.Config;
 
-import java.net.URL;
-
 @Config.Sources({
-        "classpath:${env}.properties",
-        "classpath:local.properties"
-})
 
+        "classpath:auth.properties"
+})
 public interface AuthConfig extends Config {
 
     @Key("user")

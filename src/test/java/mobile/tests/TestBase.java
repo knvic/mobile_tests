@@ -1,28 +1,27 @@
 package mobile.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 
 import io.qameta.allure.selenide.AllureSelenide;
-import mobile.config.AuthConfig;
-import mobile.config.ConfigReader;
-import mobile.config.MobileConfig;
-import mobile.config.MobileConfigForProject;
 import mobile.drivers.BrowserstackDriver;
+import mobile.helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 public class TestBase {
-    protected static final MobileConfig mobileConfig = ConfigReader.Instance.readMobileConfig();
-    protected static final AuthConfig authConfig = ConfigReader.Instance.readAuthConfig();
+
     @BeforeAll
     static void beforeAll() {
-        MobileConfigForProject mobileConfigForProject=new MobileConfigForProject(mobileConfig,authConfig );
-        mobileConfigForProject.webConfig();
+        Configuration.browser = BrowserstackDriver.class.getName();
+        Configuration.browserSize = null;
+        Configuration.timeout = 30000;
     }
 
     @BeforeEach
@@ -34,11 +33,11 @@ public class TestBase {
     @AfterEach
     void afterEach() {
 //        Attach.screenshotAs("Last screenshot");
-       /* Attach.pageSource();
+        Attach.pageSource();
 
         String sessionId = Selenide.sessionId().toString();
         closeWebDriver();
 
-        Attach.addVideo(sessionId);*/
+        Attach.addVideo(sessionId);
     }
 }

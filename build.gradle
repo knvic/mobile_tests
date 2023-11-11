@@ -24,7 +24,8 @@ dependencies {
             'org.json:json:20230618',
             'org.aeonbits.owner:owner:1.0.12',
             'org.assertj:assertj-core:3.24.2',
-            "io.appium:java-client:8.3.0"
+            "io.appium:java-client:8.3.0",
+           'org.assertj:assertj-core:3.24.2'
     )
 
 }
@@ -44,20 +45,17 @@ tasks.withType(Test) {
         }
     }
 }
-/*task run_api(type: Test) {
+task run_android(type: Test) {
     useJUnitPlatform {
-        includeTags("api")
+        includeTags("android")
     }
 }
 
-task run_web(type: Test) {
+task run_ios(type: Test) {
     useJUnitPlatform {
-        includeTags("web")
+        includeTags("ios")
     }
 }
 
-task run_all(type: Test) {
-    useJUnitPlatform {
-        includeTags("all")
-    }
-}*/
+
+
