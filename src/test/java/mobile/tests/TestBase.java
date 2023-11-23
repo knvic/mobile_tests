@@ -19,8 +19,8 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 public class TestBase {
 
-   //public static final String deviceHost =  System.getProperty("deviceHost");
-    public static final String deviceHost =  "browserstack";
+   public static final String deviceHost =  System.getProperty("deviceHost");
+   // public static final String deviceHost =  "browserstack";
 
     @BeforeAll
     static void beforeAll() {
