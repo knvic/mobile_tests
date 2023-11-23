@@ -47,7 +47,7 @@ public class LocalTests  extends TestBase {
 
     @Test
     @Description("Проверка onboarding screen")
-    void checkWikipediaApplication () {
+    void  onboardingScteenTest() {
         step("Проверка первой страницы", () ->
                 $(id("org.wikipedia.alpha:id/secondaryTextView"))
                         .shouldHave(text("We’ve found the following on your device:")));
