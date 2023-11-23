@@ -3,7 +3,7 @@ package mobile.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${env}.properties",
+        "classpath:${deviceHost}.properties",
         "classpath:emulator.properties"
 
 })
