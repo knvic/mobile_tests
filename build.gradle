@@ -25,7 +25,9 @@ dependencies {
             'org.aeonbits.owner:owner:1.0.12',
             'org.assertj:assertj-core:3.24.2',
             "io.appium:java-client:8.3.0",
-           'org.assertj:assertj-core:3.24.2'
+           'org.assertj:assertj-core:3.24.2',
+           'commons-io:commons-io:2.15.0'
+
     )
 
 }
@@ -45,17 +47,16 @@ tasks.withType(Test) {
         }
     }
 }
-task run_android(type: Test) {
+task browserstack_test(type: Test) {
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("browserstack")
     }
 }
 
-task run_ios(type: Test) {
+task local_test(type: Test) {
     useJUnitPlatform {
-        includeTags("ios")
+        includeTags("local")
     }
 }
-
 
 

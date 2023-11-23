@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("krivorotovnv")
 @Link(value = "Testing", url = "https://app-automate.browserstack.com/")
 @Severity(SeverityLevel.BLOCKER)
-@Tag("android")
+@Tag("browserstack")
 public class AndroidTests extends TestBase {
 
     @Story(value = "Тесты мобильного Android приложения")

@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:${env}.properties",
-        "classpath:android.properties"
+        "classpath:emulator.properties"
 
 })
 
@@ -20,5 +20,6 @@ public interface MobileConfig extends Config {
     @Key("os_version")
     @DefaultValue("12.0")
     String getVersion();
+
 
 }
